@@ -1,3 +1,77 @@
+# List of Instructions Available for 6502 MicroProcessor
+
+
+| Hex Code | Instruction                      | Assembly Mnemonics | Arguments   | Category |
+| -------- | -------------------------------- | ------------------ | ---------   | -------- |
+| 00       | Break/Interrupt                  | BRK                | impl        | |
+| 01       | Or with Accumulator              | ORA                | X,ind       | |
+| 02       |                                  |                    |             |          |
+| 03       |                                  |                    |             |          |
+| 04       |                                  |                    |             |          |
+| 05       | Or with Accumulator              | ORA                | zpg         |          |
+| 06       | Arithmetic Shift Left            | ASL                | zpg         |          |
+| 07       |                                  |                    |             |          |
+| 08       | Pull Processor Status from Stack | PHP                | impl        |          |
+| 09       | Or with Accumulator              | ORA                | #           |          |
+| 0A       | Arithmetic Shift Left            | ASL                | A           |          |
+| 0B       |                                  |                    |             |          |
+| 0C       |                                  |                    |             |          |
+| 0D       | Or with Accumulator              | ORA                | abs         |          |
+| 0E       | Arithmetic Shift Left            | ASL                | abs         |          |
+| 0F       |                                  |                    |             |          |
+| 10       | Branch on Plus                   | BPL                | rel         |          |
+| 11       | Or with Accumulator              | ORA                | ind,Y       |          |
+| 12       |                                  |                    |             |          |
+| 13       |                                  |                    |             |          |
+| 14       |                                  |                    |             |          |
+| 15       | Or with Accumulator              | ORA                | zpg,X       |          |
+| 16       | Arithmetic Shift Left            | ASL                | zpg,X       |          |
+| 17       |                                  |                    |             |          |
+| 18       | Clear Carry                      | CLC                | impl        |          |
+| 19       | Or with Accumulator              | ORA                | abs,Y       |          |
+| 1A       |                                  |                    |             |          |
+| 1B       |                                  |                    |             |          |
+| 1C       |                                  |                    |             |          |
+| 1D       | Or with Accumulator              | ORA                | abs,X       |          |
+| 1E       | Arithmetic Shift Left            | ASL                | abs,X       |          |
+| 1F       |                                  |                    |             |          |
+| 20       | Jump Subroutine                  | JSR                | abs         |          |
+| 21       | And                              | AND                | X,ind       |          |
+| 22       |                                  |                    |             |          |
+| 23       |                                  |                    |             |          |
+| 24       | Bit Test                         | BIT                | zpg         |          |
+| 25       | And                              | AND                | zpg         |          |
+| 26       | Rotate Left                      | ROL                | zpg         |          |
+| 27       |                                  |                    |             |          |
+| 28       | Pull Processor Status from Stack | PLP                | impl        |          |
+| 29       | And                              | AND                | #           |          |
+| 2A       | Rotate Left                      | ROL                | A           |          |
+| 2B       |                                  |                    |             |          |
+| 2C       | Bit Test                         | BIT                | abs         |          |
+| 2D       | And                              | AND                | abs         |          |
+| 2E       | Rotate Left                      | ROL                | abs         |          |
+| 2F       |                                  |                    |             |          |
+
+
+
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+| 25       |                     |                    |             |          |
+
+
+Control
+DataProcessing
+DataTransfers
+InputOutput
+TestingBranching
+
 BRK - force interrupt [$00] - Test & Branch
 ORA - OR with Accumulator: - Data Processing
   1. [09] (Immediate)
@@ -11,55 +85,32 @@ ASL - Arithmetic Shift Left - Data Processing
   3. [16] (Zero Page, X)
   4. [0E] (Absolute)
   5. [1E] (Absolute, X)
-RMB - Reset Memory Bit(0-7) WDC extension tbd
-PHP - Push Processor Status [08] tbd
-TSB - Test and Set Bits [0C]  WDC extension tbd
-BBR - Branch On Bit Reset [0-7F] WDC extension tbd
-BPL - Branch On Plus [10] tbd
-TRB - 
-CLC
-INC
-A 
+RMB - Reset Memory Bit(0-7) WDC extension tbd  
+PHP - Push Processor Status [08] tbd  
+TSB - Test and Set Bits [0C]  WDC extension tbd  
+BBR - Branch On Bit Reset [0-7F] WDC extension tbd  
+BPL - Branch On Plus [10] tbd  
+TRB - Test and Reset Bit [] tbd
+CLC - Clear Carry [18]  
+INC - Increment[E6 - Zero Page] [EE - Absolute] [FE - Absolute,X (inc location indexed by X)]
 TRB
-a 
 ORA
-a,x
 ASL
-a,x
 BBR1
-r 
-1
-2
 JSR
-a
 AND
-(zp,x)
 BIT
-zp
 AND
-zp
 ROL
-zp
 RMB2
-zp 
 PLP
-s
 AND
-#
 ROL
-A
 BIT
-a
 AND
-a
 ROL
-a
 BBR2
-r 
-2
-3
 BMI
-r
 AND
 (zp),y
 AND
